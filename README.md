@@ -8,7 +8,7 @@ TorrentFinder.sh is a "simple" bash script that uses wget, grep, etc. to list th
     bash TF.sh
     
 ### OSX
-you need home brew installed
+you need homebrew installed
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew tap homebrew/dupes; brew install bash
