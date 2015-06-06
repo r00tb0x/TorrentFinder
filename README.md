@@ -1,5 +1,5 @@
 ## TorrentFinder
-TorrentFinder.sh is a "simple" bash script that uses wget, grep, etc. to list the top 5 torrent based on the search you made. tested and working on archlinux TF.sh should work on any other linux distro, i've seen problems when using OSX
+TorrentFinder.sh is a "simple" bash script that uses wget, grep, etc. to list the top 5 torrent based on the search you made. tested and working on archlinux TorrentFinder should work on any other linux distro, i've seen problems when using OSX. I have not tested it in cygwin
 
 ## Installation and usage
 
@@ -11,9 +11,7 @@ TorrentFinder.sh is a "simple" bash script that uses wget, grep, etc. to list th
 to get it working on osx you need homebrew installed and the more up to date software
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew tap homebrew/dupes; brew install bash
-    brew tap homebrew/dupes; brew install grep
-    brew tap homebrew/dupes; brew install gnu-sed
+    brew tap homebrew/dupes; brew install bash grep gnu-sed
     
 ## Demo
 
