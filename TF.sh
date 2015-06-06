@@ -15,15 +15,15 @@ read SEA
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mKickass\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
-wget -O- -q http://kat.unbanthe.org/usearch/${SEA// /%20}/\?field\=seeders\&sorder\=desc | grep -A 1 '<div class="torrentname">' | grep -P 'href="' | cut -d '"' -f 2 | sed 's\/\http://kat.unbanthe.org/\' | head -5 | cat -n
+wget -O- -q http://kat.unbanthe.org/usearch/${SEA// /%20}/\?field\=seeders\&sorder\=desc | grep -A 1 '<div class="torrentname">' | grep -P 'href="' | cut -d '"' -f 2 | sed 's\/\http://kat.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
-wget -O- -q http://kat.unbanthe.org/usearch/${SEA// /%20}/\?field\=seeders\&sorder\=desc | grep '"Download torrent file" href="' | cut -d '"' -f4 | head -5 | cat -n
+wget -O- -q http://kat.unbanthe.org/usearch/${SEA// /%20}/\?field\=seeders\&sorder\=desc | grep '"Download torrent file" href="' | cut -d '"' -f4 | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mThe piratebay (Only supports magnet links)\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
-wget -O- -q http://tpb.unbanthe.org/search/${SEA// /%20}/0/7/0 | grep '<div class="detName' | cut -d '"' -f4 | sed 's\/\http://tpb.unbanthe.org/\' | head -5 | cat -n
+wget -O- -q http://tpb.unbanthe.org/search/${SEA// /%20}/0/7/0 | grep '<div class="detName' | cut -d '"' -f4 | sed 's\/\http://tpb.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
-wget -O- -q http://tpb.unbanthe.org/search/${SEA// /%20}/0/7/0 | grep -A 2 '<div class="detName' | grep '<a href="magnet:?' | cut -d '"' -f 2 | head -5 | cat -n
+wget -O- -q http://tpb.unbanthe.org/search/${SEA// /%20}/0/7/0 | grep -A 2 '<div class="detName' | grep '<a href="magnet:?' | cut -d '"' -f 2 | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31m1337x\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
@@ -39,21 +39,21 @@ wget -O- -q http://iso.unbanthe.org/torrents/\?ihq\=${SEA// /+}\&Torrent_sort\=s
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mTorrent Hound\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
-wget -O- -q http://th.unbanthe.org/search/1/${SEA// /+}/seeds:desc | grep '</div><a href="' | cut -d '"' -f2 | sed 's\/\http://th.unbanthe.org/\' | head -5 | cat -n
+wget -O- -q http://th.unbanthe.org/search/1/${SEA// /+}/seeds:desc | grep '</div><a href="' | cut -d '"' -f2 | sed 's\/\http://th.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
-wget -O- -q http://th.unbanthe.org/search/1/${SEA// /+}/seeds:desc | grep '<a href="/torrent/' | cut -d '"' -f 2 | head -5 | sed 's\/\http://th.unbanthe.org/\' | cat -n
+wget -O- -q http://th.unbanthe.org/search/1/${SEA// /+}/seeds:desc | grep '<a href="/torrent/' | cut -d '"' -f 2 | head -5 | sed 's\/\http://th.unbanthe.org/\' | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mseedpeer (might take a bit longer)\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
-wget -O- -q http://sp.unbanthe.org/search/${SEA// /-}/4/1.html | grep -o -E 'href="/details/.{0,1000}' | cut -d '"' -f2 | sed 's\/\http://sp.unbanthe.org/\' | head -5 | cat -n
+wget -O- -q http://sp.unbanthe.org/search/${SEA// /-}/4/1.html | grep -o -E 'href="/details/.{0,1000}' | cut -d '"' -f2 | sed 's\/\http://sp.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
-wget -O- -q http://sp.unbanthe.org/search/${SEA// /-}/4/1.html | grep -o -E 'href="/details/.{0,1000}' | cut -d '"' -f2 | sed 's\/\http://sp.unbanthe.org/\' | head -5 | xargs wget -O- -q | grep 'href="/download/' | cut -d '"' -f4 | sed 's\/\http://sp.unbanthe.org/\' | cat -n
+wget -O- -q http://sp.unbanthe.org/search/${SEA// /-}/4/1.html | grep -o -E 'href="/details/.{0,1000}' | cut -d '"' -f2 | sed 's\/\http://sp.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | xargs wget -O- -q | grep 'href="/download/' | cut -d '"' -f4 | sed 's\/\http://sp.unbanthe.org/\' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mLime Torrents (might take a bit longer)\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
-wget -O- -q http://lime.unbanthe.org/search/all/${SEA// /-}/seeds/1/ | grep -o -E '"></a><a href="/.{0,1000}' | cut -d '"' -f3 | sed 's\/\http://lime.unbanthe.org/\' | head -5 | cat -n
+wget -O- -q http://lime.unbanthe.org/search/all/${SEA// /-}/seeds/1/ | grep -o -E '"></a><a href="/.{0,1000}' | cut -d '"' -f3 | sed 's\/\http://lime.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
-wget -O- -q http://lime.unbanthe.org/search/all/${SEA// /-}/seeds/1/ | grep -o -E '"></a><a href="/.{0,1000}' | cut -d '"' -f3 | sed 's\/\http://lime.unbanthe.org/\' | head -5 | xargs wget -O- -q | grep '<a href="http://itorrents.org/torrent' | cut -d '"' -f2 | cat -n
+wget -O- -q http://lime.unbanthe.org/search/all/${SEA// /-}/seeds/1/ | grep -o -E '"></a><a href="/.{0,1000}' | cut -d '"' -f3 | sed 's\/\http://lime.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | xargs wget -O- -q | grep '<a href="http://itorrents.org/torrent' | cut -d '"' -f2 | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mYTS Torrents (movies)\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
