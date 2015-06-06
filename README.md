@@ -1,5 +1,5 @@
 ## TorrentFinder
-TorrentFinder.sh is a "simple" bash script that uses wget, grep, etc. to list the top 5 torrent based on the search you made
+TorrentFinder.sh is a "simple" bash script that uses wget, grep, etc. to list the top 5 torrent based on the search you made. tested and working on archlinux TF.sh should work on any other linux distro
 
 ## Installation and usage
 
