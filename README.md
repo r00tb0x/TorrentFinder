@@ -21,7 +21,7 @@ TorrentFinder.sh is a "simple" bash script that uses wget, grep, etc. to list th
 To get it working on osx you need homebrew installed and the more up to date software and you need to complie sed form source 
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew tap homebrew/dupes; brew install bash grep make
+    brew tap homebrew/dupes; brew install wget bash grep make
     wget https://ftp.gnu.org/gnu/sed/sed-4.2.tar.gz; tar -xvf sed-4.2.tar.gz; cd sed-4.2; ./configure; make; sudo make install
     
 ### Cygwin
