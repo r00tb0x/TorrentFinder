@@ -23,6 +23,12 @@ to get it working on osx you need homebrew installed and the more up to date sof
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew tap homebrew/dupes; brew install bash grep gnu-sed
     
+### Cygwin
+when you have installed wget and git in cygwin you can make program automaticly launch TorrentFinder when launched
+    
+     cd; git clone "https://github.com/m3k4/TorrentFinder"; mv TorrentFinder/TF.sh /usr/local/bin; cd; echo "printf '\e[8;34;230t'" >> .bashrc; echo "for (( ; ; )) do bash TF.sh; done" >> .bashrc; exit
+
+    
 ## Demo
 
 https://asciinema.org/a/ahp6bvx8jdaae6a4q9wkdemzs
