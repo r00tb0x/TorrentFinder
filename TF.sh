@@ -29,13 +29,13 @@ echo -e "\e[31m1337x\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 wget -O- -q http://1337x.unbanthe.org/sort-search/${SEA// /%20}/seeders/desc/1/ | grep '<strong><a href="/torrent' | cut -d '"' -f2 | sed 's\/\http://1337x.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
-wget -O- -q http://1337x.unbanthe.org/sort-search/${SEA// /%20}/seeders/desc/1/ | grep '<strong><a href="/torrent' | cut -d '"' -f2 | sed 's\/\http://1337x.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | xargs wget -O- -q | grep 'href="http://torcache.net/torrent/' | cut -d '"' -f4 | cat -n
+wget -O- -q http://1337x.unbanthe.org/sort-search/${SEA// /%20}/seeders/desc/1/ | grep '<strong><a href="/torrent' | cut -d '"' -f2 | sed 's\/\http://1337x.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | xargs wget -O- -q 2>&1 | grep 'href="http://torcache.net/torrent/' | cut -d '"' -f4 | sed '/wget: missing URL/d' | sed '/Usage: wget /d' | sed '/^\s*$/d' | sed '/Try `wget --help/d' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mIso Hunt\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 wget -O- -q http://iso.unbanthe.org/torrents/\?ihq\=${SEA// /+}\&Torrent_sort\=seeders.desc | grep '"title-row"><a href="' | cut -d '"' -f12 | sed 's\/\http://iso.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
-wget -O- -q http://iso.unbanthe.org/torrents/\?ihq\=${SEA// /+}\&Torrent_sort\=seeders.desc | grep '"title-row"><a href="' | cut -d '"' -f12 | sed 's\/\http://iso.unbanthe.org/\' | head -5 | sed 's/ /%20/g' |  xargs wget -O- -q | grep '<a href="https://torrent.isohunt.to/download.php' | cut -d '"' -f2 | cat -n
+wget -O- -q http://iso.unbanthe.org/torrents/\?ihq\=${SEA// /+}\&Torrent_sort\=seeders.desc | grep '"title-row"><a href="' | cut -d '"' -f12 | sed 's\/\http://iso.unbanthe.org/\' | head -5 | sed 's/ /%20/g' |  xargs wget -O- -q 2>&1 | grep '<a href="https://torrent.isohunt.to/download.php' | cut -d '"' -f2 | sed '/wget: missing URL/d' | sed '/Usage: wget /d' | sed '/^\s*$/d' | sed '/Try `wget --help/d' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mTorrent Hound\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
@@ -47,13 +47,13 @@ echo -e "\e[31mseedpeer (might take a bit longer)\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 wget -O- -q http://sp.unbanthe.org/search/${SEA// /-}/4/1.html | grep -o -E 'href="/details/.{0,1000}' | cut -d '"' -f2 | sed 's\/\http://sp.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
-wget -O- -q http://sp.unbanthe.org/search/${SEA// /-}/4/1.html | grep -o -E 'href="/details/.{0,1000}' | cut -d '"' -f2 | sed 's\/\http://sp.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | xargs wget -O- -q | grep 'href="/download/' | cut -d '"' -f4 | sed 's\/\http://sp.unbanthe.org/\' | cat -n
+wget -O- -q http://sp.unbanthe.org/search/${SEA// /-}/4/1.html | grep -o -E 'href="/details/.{0,1000}' | cut -d '"' -f2 | sed 's\/\http://sp.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | xargs wget -O- -q 2>&1 | grep 'href="/download/' | cut -d '"' -f4 | sed 's\/\http://sp.unbanthe.org/\' | sed '/wget: missing URL/d' | sed '/Usage: wget /d' | sed '/^\s*$/d' | sed '/Try `wget --help/d' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mLime Torrents (might take a bit longer)\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 wget -O- -q http://lime.unbanthe.org/search/all/${SEA// /-}/seeds/1/ | grep -o -E '"></a><a href="/.{0,1000}' | cut -d '"' -f3 | sed 's\/\http://lime.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
-wget -O- -q http://lime.unbanthe.org/search/all/${SEA// /-}/seeds/1/ | grep -o -E '"></a><a href="/.{0,1000}' | cut -d '"' -f3 | sed 's\/\http://lime.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | xargs wget -O- -q | grep '<a href="http://itorrents.org/torrent' | cut -d '"' -f2 | cat -n
+wget -O- -q http://lime.unbanthe.org/search/all/${SEA// /-}/seeds/1/ | grep -o -E '"></a><a href="/.{0,1000}' | cut -d '"' -f3 | sed 's\/\http://lime.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | xargs wget -O- -q 2>&1 | grep '<a href="http://itorrents.org/torrent' | cut -d '"' -f2 | sed '/wget: missing URL/d' | sed '/Usage: wget /d' | sed '/^\s*$/d' | sed '/Try `wget --help/d' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mYTS Torrents (movies)\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
