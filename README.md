@@ -18,10 +18,11 @@ TorrentFinder.sh is a "simple" bash script that uses wget, grep, etc. to list th
     bash TF.sh
     
 ### OSX
-To get it working on osx you need homebrew installed and the more up to date software
+To get it working on osx you need homebrew installed and the more up to date software and you need to complie sed form source 
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew tap homebrew/dupes; brew install bash grep gnu-sed
+    brew tap homebrew/dupes; brew install bash grep make
+    wget https://ftp.gnu.org/gnu/sed/sed-4.2.tar.gz; tar -xvf sed-4.2.tar.gz; cd sed-4.2; ./configure; make; sudo make install
     
 ### Cygwin
 When you have installed wget and git in cygwin you can make cygwin automatically launch TorrentFinder when launched
