@@ -7,7 +7,7 @@ echo -e "\e[31m    | | (_) | |  | | |  __/ | | | |_  | |    | | | | | (_| |  __/
 echo -e "\e[31m    |_|\___/|_|  |_|  \___|_| |_|\__| |_|    |_|_| |_|\__,_|\___|_|    \e[0m"
 echo -e "\e[31m                                                                       \e[0m"
 echo -e "\e[31m                                                                       \e[0m"
-echo -e "\e[31m                                                         By M3K4 V. 1.1\e[0m"
+echo -e "\e[31m                                                         By M3K4 V. 1.2\e[0m"
 echo -e "\e[31m                                   More sites to be added in the future\e[0m"
 echo -e "\e[31m                                                                       \e[0m"
 echo -ne "Search: "
