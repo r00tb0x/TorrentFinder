@@ -16,6 +16,12 @@ TorrentFinder.sh is a "simple" bash script that uses wget, grep, etc. to list th
     git clone https://github.com/M3K4/TorrentFinder
     cd TorrentFinder
     bash TF.sh
+
+### aliases
+if you have added the 2 aliases to your .bashrc just type TF to run the script and UTF to update it
+
+    alias UTF="cd /usr/local/bin; sudo rm -rf TorrentFinder; sudo git clone https://github.com/m3k4/TorrentFinder; sudo rm TF; sudo mv TorrentFinder/TF.sh /usr/local/bin/TF; sudo chmod +x TF; cd"
+    alias TF="bash TF"
     
 ### OSX
 To get it working on osx you need homebrew installed and the more up to date software and you need to complie sed form source 
