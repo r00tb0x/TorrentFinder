@@ -1,5 +1,4 @@
 #!/bin/bash
-#VER=$(wget -O- -q "http://winrarhacker.nu/torrentfinderversion")
 echo -e "\e[31m  _______                        _     ______ _           _            \e[0m"
 echo -e "\e[31m |__   __|                      | |   |  ____(_)         | |           \e[0m"
 echo -e "\e[31m    | | ___  _ __ _ __ ___ _ __ | |_  | |__   _ _ __   __| | ___ _ __  \e[0m"
