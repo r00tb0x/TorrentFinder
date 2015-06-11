@@ -43,6 +43,10 @@ wget -O- -q http://th.unbanthe.org/search/1/${SEA// /+}/seeds:desc | grep '</div
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
 wget -O- -q http://th.unbanthe.org/search/1/${SEA// /+}/seeds:desc | grep '<a href="/torrent/' | cut -d '"' -f 2 | head -5 | sed 's\/\http://th.unbanthe.org/\' | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
+echo -e "\e[31mIt-Ebooks\e[0m"
+for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
+wget -O- -q "http://it-ebooks.info/search/?q=${SEA// /+}&type=title" | grep -o -P 'href="/book/.{0,150}' | sed 's\href="/book/\"it-ebooks.info/\' | sed 's\/"\"\' | grep 'title="' | cut -d '"' -f4,2 | sed 's/"/ Title: /' | cat -n
+for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mseedpeer (might take a bit longer)\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 wget -O- -q http://sp.unbanthe.org/search/${SEA// /-}/4/1.html | grep -o -E 'href="/details/.{0,1000}' | cut -d '"' -f2 | sed 's\/\http://sp.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
