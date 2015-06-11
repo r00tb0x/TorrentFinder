@@ -1,5 +1,5 @@
 #!/bin/bash
-VER=$(wget -O- -q "http://winrarhacker.nu/torrentfinderversion")
+#VER=$(wget -O- -q "http://winrarhacker.nu/torrentfinderversion")
 echo -e "\e[31m  _______                        _     ______ _           _            \e[0m"
 echo -e "\e[31m |__   __|                      | |   |  ____(_)         | |           \e[0m"
 echo -e "\e[31m    | | ___  _ __ _ __ ___ _ __ | |_  | |__   _ _ __   __| | ___ _ __  \e[0m"
@@ -8,7 +8,7 @@ echo -e "\e[31m    | | (_) | |  | | |  __/ | | | |_  | |    | | | | | (_| |  __/
 echo -e "\e[31m    |_|\___/|_|  |_|  \___|_| |_|\__| |_|    |_|_| |_|\__,_|\___|_|    \e[0m"
 echo -e "\e[31m                                                                       \e[0m"
 echo -e "\e[31m                                                                       \e[0m"
-echo -e "\e[31m                                                         By M3K4 V. ${VER}\e[0m"
+echo -e "\e[31m                                                         By M3K4 V. 1.3\e[0m"
 echo -e "\e[31m                                   More sites to be added in the future\e[0m"
 echo -e "\e[31m                                                                       \e[0m"
 echo -ne "Search: "
