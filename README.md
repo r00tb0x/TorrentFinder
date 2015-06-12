@@ -10,6 +10,7 @@ TorrentFinder.sh is a "simple" bash script that uses wget, grep, etc. to list th
     seedpeer
     Lime Torrents
     YTS 
+    it-ebooks
     
 ## Installation and usage
 
