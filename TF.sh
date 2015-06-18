@@ -7,7 +7,7 @@ echo -e "\e[31m    | | (_) | |  | | |  __/ | | | |_  | |    | | | | | (_| |  __/
 echo -e "\e[31m    |_|\___/|_|  |_|  \___|_| |_|\__| |_|    |_|_| |_|\__,_|\___|_|    \e[0m"
 echo -e "\e[31m                                                                       \e[0m"
 echo -e "\e[31m                                                                       \e[0m"
-echo -e "\e[31m                                                         By M3K4 V. 1.3\e[0m"
+echo -e "\e[31m                                                         By M3K4 V. 1.4\e[0m"
 echo -e "\e[31m                                   More sites to be added in the future\e[0m"
 echo -e "\e[31m                                                                       \e[0m"
 echo -ne "Search: "
@@ -21,9 +21,9 @@ wget -O- -q http://kat.unbanthe.org/usearch/${SEA// /%20}/\?field\=seeders\&sord
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31mThe piratebay (Only supports magnet links)\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
-wget -O- -q http://tpb.unbanthe.org/search/${SEA// /%20}/0/7/0 | grep '<div class="detName' | cut -d '"' -f4 | sed 's\/\http://tpb.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
+wget -O- -q --user-agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.125 Safari/537.36" http://tpb.unbanthe.org/search/${SEA// /%20}/0/7/0 | grep '<div class="detName' | cut -d '"' -f4 | sed 's\/\http://tpb.unbanthe.org/\' | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "-"; done
-wget -O- -q http://tpb.unbanthe.org/search/${SEA// /%20}/0/7/0 | grep -A 2 '<div class="detName' | grep '<a href="magnet:?' | cut -d '"' -f 2 | head -5 | sed 's/ /%20/g' | cat -n
+wget -O- -q --user-agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.125 Safari/537.36" http://tpb.unbanthe.org/search/${SEA// /%20}/0/7/0 | grep -A 2 '<div class="detName' | grep '<a href="magnet:?' | cut -d '"' -f 2 | head -5 | sed 's/ /%20/g' | cat -n
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
 echo -e "\e[31m1337x\e[0m"
 for i in $(seq 1 $(stty size | cut -d' ' -f2)); do echo -n "="; done
